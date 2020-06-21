@@ -20,7 +20,7 @@ var locations = /** @class */ (function () {
     }
     //too many examples tried here - process to ...html
     locations.prototype.builtit = function () {
-        return "\n\t\t\t<div class=\"card col-lg-3 col-md-6 col-sm-12\"> \n\t\t\t\t<div class=\"cardName\">\n\t\t\t\t\t<h3>" + this.name + "</h3>\n                </div>\n                <div class=\"cardDescription\">\n\t\t\t\t<div class=\"visit\">\n\t\t\t\t\t<p><i class=\"fas fa-calendar\"></i>" + this.visitedDate + "</p>\t\n\t\t\t\t</div>\n\t\t\t\t<div class=\"cardImage\">\n\t\t\t\t\t<img src=\"" + this.image + "\">\n\t\t\t\t</div>\t\t\t\t\n\t\t\t\t\t<p><i class=\"fas fa-map-marker-alt\"></i>" + this.address + "</p>\t\n\t\t";
+        return "\n\t\t\t<div class=\"card col-lg-3 col-md-6 col-sm-12\"> \n\t\t\t\t<div class=\"cardName\">\n\t\t\t\t\t<h3>" + this.name + "</h3>\n                </div>\n                <div class=\"cardDescription\">\n\t\t\t\t<div class=\"date\">\n\t\t\t\t\t<p><i class=\"fas fa-calendar\"></i>" + this.visitedDate + "</p>\t\n\t\t\t\t</div>\n\t\t\t\t<div class=\"cardImage\">\n\t\t\t\t\t<img src=\"" + this.image + "\">\n\t\t\t\t</div>\t\t\t\t\n\t\t\t\t\t<p><i class=\"fas fa-map-marker-alt\"></i>" + this.address + "</p>\t\n\t\t";
     };
     return locations;
 }());
@@ -88,7 +88,6 @@ therestaurants[3] = new restaurant("Chök", "images/chock.jpeg", "16.11.2019", "
 var block2 = document.createElement("div");
 block2.setAttribute("class", "row");
 block2.setAttribute("id", "restaurant");
-document.getElementById("mainContent").append(block2);
 var subblock2 = document.createElement("div");
 subblock2.setAttribute("class", "col-lg-12");
 subblock2.setAttribute("id", "restauranttitle");
@@ -126,13 +125,12 @@ theevents[3] = new events("Brunch in The Park", "images/BrunchInThePark.jpg", "0
 var block3 = document.createElement("div");
 block3.setAttribute("class", "row");
 block3.setAttribute("id", "events");
-document.getElementById("mainContent").append(block3);
 var subblock3 = document.createElement("div");
 subblock3.setAttribute("class", "col-lg-12");
-subblock3.setAttribute("id", "eventheading");
+subblock3.setAttribute("id", "eventtitle");
 document.getElementById("mainContent").append(subblock3);
 document.getElementById("mainContent").append(block3);
-document.getElementById("eventheading").innerHTML += "<div class=\"title\"><h1>& Events</h1></div><>";
+document.getElementById("eventtitle").innerHTML += "<div class=\"title\"><h1>& Events</h1></div><>";
 for (var value in theevents) {
     document.getElementById("events").innerHTML += theevents[value].displayevents();
 }

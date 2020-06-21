@@ -19,7 +19,7 @@ class locations{
 					<h3>${this.name}</h3>
                 </div>
                 <div class="cardDescription">
-				<div class="visit">
+				<div class="date">
 					<p><i class="fas fa-calendar"></i>${this.visitedDate}</p>	
 				</div>
 				<div class="cardImage">
@@ -31,7 +31,7 @@ class locations{
 };
 // on... needed
 class place extends locations{
-	private price : string;
+	private price :"";
 
 	constructor(name, image, visitedDate, address, price){
 		super(name, image, visitedDate, address);
@@ -112,8 +112,6 @@ let block2 = document.createElement("div");
 block2.setAttribute("class", "row");
 block2.setAttribute("id", "restaurant");
 
-document.getElementById("mainContent").append(block2);
-
 let subblock2 = document.createElement("div");
 subblock2.setAttribute("class", "col-lg-12");
 subblock2.setAttribute("id", "restauranttitle");
@@ -161,16 +159,14 @@ let block3 = document.createElement("div");
 block3.setAttribute("class", "row");
 block3.setAttribute("id", "events");
 
-document.getElementById("mainContent").append(block3);
-
 let subblock3 = document.createElement("div");
 subblock3.setAttribute("class", "col-lg-12");
-subblock3.setAttribute("id", "eventheading");
+subblock3.setAttribute("id", "eventtitle");
 
 document.getElementById("mainContent").append(subblock3);
 document.getElementById("mainContent").append(block3);
 
-document.getElementById("eventheading").innerHTML += `<div class="title"><h1>& Events</h1></div><>`
+document.getElementById("eventtitle").innerHTML += `<div class="title"><h1>& Events</h1></div><>`
 
 for(var value in theevents){
 	document.getElementById("events").innerHTML += theevents[value].displayevents();
